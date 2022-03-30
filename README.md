@@ -1,31 +1,5 @@
 # Credit Card Payment Model
 ## Introduction
-## Data Features Explanations
-## Card Status Explanation
-## Feature Engineered Columns
-## Cleaning the Data
-## Percent Payment Model
-Our goal was to make a model that would predict the percentage of late payments a client would have. We used `GradientBoost` and  fit the model with X AND Y’s
-## Mode Card Status Model
-Our goal was to make a model that would predict the mode of card status a client would have. We used `GradientBoost` and  fit the model with X AND Y’s
-###Analyzing Model Limitations
-# Findings & Suggestions\
-b
-brain
-tada
-
-
-
-
-
-23:45
-outline I am filling out the top until cleaning the data if you want to do the rest
-23:45
-Deautaun Ross flex
-New
-23:54
-Jasmine Castaneda # Credit Card Payment Model
-## Introduction
 Almost everyone uses a credit card in today's world.  Not everyone, however, pays off their credit card debts promptly–or at all. Because of this, we wanted to build models that would give credit card companies the ability to predict whether or not a cardholder will pay off their debt promptly and the percent of payments that they will likely miss.
 The data set we used to build and train our model comes from Kaggle (https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud).
 The original data set contained over 777,000 rows and included customer ID, customer salary, customer age, card status, etc. For data cleaning, we renamed all of the columns to be more helpful, dropped the occupation column because of the missing rows, labeled encoded all of the objects, and only used clients who had been cardholders for 6 months or greater. For simplicity and ease of analysis, we created summary statistics for each cardholder, such as the percentage of payments they have missed, amount of times they have appeared in the data set, and their mode card status.
@@ -72,12 +46,26 @@ Legend for "**card_status**":
 - Used clients who have been a client for 6 months or longer
 ## Columns Used Building the Models
 We used `feature importance` to find what columns had the biggest effect on our model. These columns were the most impactful:
-salary", "property_type", "age_days", "days_employed", "has_email", "AMT_CARD_STATUS_ENTRIES", "MODE_CARD_STATUS", "PCT_PAYMENTS_MISSED_GTR_AVG"
+- salary
+- property_type
+- age_days
+- days_employed
+- has_email
+- AMT_CARD_STATUS_ENTRIES
+- MODE_CARD_STATUS
+- PCT_PAYMENTS_MISSED_GTR_AVG
 ## Percent Payment Model
-Our goal was to make a model that would predict the percentage of late payments a client would have. We used `GradientBoost` and  fit the model with X AND Y’s
+- Gradient Boosting Regressor
+- Used GridSearchCV for hyperparameter tuning
+- 84.5% Accuracy
 ## Mode Card Status Model
-Our goal was to make a model that would predict the mode of card status a client would have. We used `GradientBoost` and  fit the model with X AND Y’s
-###Analyzing Model Limitations
+- Gradient Boosting Classifier
+- Used GridSearchCV for hyperparameter tuning
+- 88% accuracy
+### Analyzing Model Limitations
+- Our model had a hard time predicting values between 30-70 for percent missing
+- Data may not be able to tell us the values we were looking for, the featured engineered columns
+- Data is unbalanced for classification but we are able to get clear predictions. There is an absence of data from the card status 1-5
 # Findings & Suggestions
-kaggle.comkaggle.com
-Credit Card Fraud Detection
+- Majority of card holders miss all or none of their payments
+- Salary, Property Type, Age, Days Employed, Has E-mail, Length of Card Holding, and Mode Card Status are important when analyzing cardholders
